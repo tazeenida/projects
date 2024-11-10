@@ -5,7 +5,7 @@ import '../App.css';
 
 const backendUrl = 'http://127.0.0.1:8000';
 
-function Skills() {
+function Skill() {
     const [skill, setSkill] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -38,7 +38,7 @@ function Skills() {
 
     return (
         <div className="Skill">
-            <h1>Skill</h1>
+            <h1>Skills</h1>
             {skill.length > 0 ? (
                 <div className="skill-columns">
                     {skill.map((item) => (
