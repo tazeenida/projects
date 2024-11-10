@@ -128,7 +128,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_WHITELIST = [
-     'projects-yybm.onrender.com'
+     'https://projects-yybm.onrender.com'
 ]
 
 
@@ -136,10 +136,10 @@ CORS_ALLOW_METHODS = [
     'GET', 'POST', 'PUT', 'DELETE', 'OPTIONS',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['projects-yybm.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://projects-yybm.onrender.com']
 
 CORS_ALLOWED_ORIGINS = [
-    "projects-yybm.onrender.com",
+    "https://projects-yybm.onrender.com",
     "http://localhost:3000",
 ]
 
