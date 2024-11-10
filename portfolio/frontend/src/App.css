@@ -1,0 +1,212 @@
+button{
+	background-color: #23a6d5;
+	border-radius: 5px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* General body styles */
+ul {
+    list-style-type: none;
+}
+
+body {
+    background-color: #f0f2f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #3b3f45;
+    color: white;
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-logo {
+    font-family: 'Pacifico', cursive;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+    color: #23a6d5;
+    transform: scale(1.1);
+}
+
+.navbar-menu {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+}
+
+.navbar-item {
+    margin: 0 15px;
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+    color: #23a6d5;
+}
+
+/* Skill Section Styles */
+.Skill {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.skill-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-auto-rows: minmax(100px, auto);
+    gap: 2rem;
+    justify-content: center;
+}
+
+.skill-item {
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skill-item strong {
+    font-size: 20px;
+    color: #2c3e50;
+}
+
+/* Headers */
+.Skill h1, .Contact h1, .Education h1, .Project h1 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Education Section Styles */
+.Education {
+    max-width: 1500px;
+    margin: 10;
+    padding: 10rem;
+}
+
+.education-columns {
+    display: flex;                 /* Use flexbox */
+    flex-wrap: wrap;               /* Allow items to wrap when necessary */
+    gap: 2rem;                     /* Space between items */
+    justify-content: center;       /* Center items horizontally */
+}
+
+.education-item {
+    flex: 1 1 calc(33% - 2rem);    /* Each item takes up 1/3 of the width minus the gap */
+    min-width: 250px;              /* Ensure each item has a minimum width */
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.education-item strong {
+    font-size: 20px;
+    color: #2c3e50;
+}
+
+/* Other Sections */
+.Contact, .Education, .Project {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-top: 20px;
+    border: 1px solid #e0e0e0;
+}
+
+/* Animations for Entry */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.slide-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 1.5s ease-out forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Link Button Styling */
+.Link {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #23a6d5;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.Link:hover {
+    background-color: #1a8dbf;
+    transform: translateY(-3px);
+}
+
+/* Enhanced Link Styles */
+.Link {
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.home-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    padding: 60px;
+    margin-top: 30px;
+    border: 1px solid #e0e0e0;
+}
