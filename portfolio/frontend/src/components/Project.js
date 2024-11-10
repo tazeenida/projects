@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import '../App.css'
 
-const backendUrl = 'http://127.0.0.1:8000';
+const backendUrl = 'https://projects-yybm.onrender.com';
 
 function Project(){
 	const[project, setProject] = useState([]);

@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-a&m0pqvl#6hdpzrlge8zxtyo(ov*f3em-gejr%j$tz8hdfss+)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'nida-tazeen-portfolio.onrender.com']
+ALLOWED_HOSTS = ['projects-yybm.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -128,7 +128,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_WHITELIST = [
-     'https://nida-tazeen-portfolio.onrender.com'
+     'projects-yybm.onrender.com'
 ]
 
 
@@ -136,10 +136,10 @@ CORS_ALLOW_METHODS = [
     'GET', 'POST', 'PUT', 'DELETE', 'OPTIONS',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://nida-tazeen-portfolio.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['projects-yybm.onrender.com']
 
 CORS_ALLOWED_ORIGINS = [
-    "https://nida-tazeen-portfolio.onrender.com",
+    "projects-yybm.onrender.com",
     "http://localhost:3000",
 ]
 
