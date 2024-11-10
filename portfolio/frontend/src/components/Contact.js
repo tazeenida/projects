@@ -45,15 +45,15 @@ function Contact() {
           {contact.map((item) => (
             <li key={item.id}>
               <strong>{item.name}</strong> <br/>
-              {item.email && <span>Email: {item.email}<br/></span>}
+              {item.email && <span><strong>Email: </strong>{item.email}<br/></span>}
               {item.github && (
                 <span>
-                  GitHub: <a href={item.github} target="_blank" rel="noopener noreferrer">{item.github}</a><br/>
+                  <strong>GitHub: </strong><a href={item.github} target="_blank" rel="noopener noreferrer">{item.github}</a><br/>
                 </span>
               )}
               {item.linkedin && (
                 <span>
-                  LinkedIn: <a href={item.linkedin} target="_blank" rel="noopener noreferrer">{item.linkedin}</a><br/>
+                  <strong>LinkedIn: </strong><a href={item.linkedin} target="_blank" rel="noopener noreferrer">{item.linkedin}</a><br/>
                 </span>
               )}
             </li>
