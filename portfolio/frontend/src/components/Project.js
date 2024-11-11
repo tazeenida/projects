@@ -1,33 +1,41 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../App.css';
 
 const backendUrl = 'https://projects-yybm.onrender.com';
 
 function Project() {
-  const [projects, setProjects] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+    const [project, setProject] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(null);
+	
+	const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetchProjects = async () => {
-      setIsLoading(true);
-      setError(null);
-      try {
-        const response = await axios.get(`${backendUrl}/api/portfolio/project/`);
-        setProjects(response.data);
-      } catch (error) {
-        console.error('Error fetching projects:', error);
-        setError(error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    fetchProjects();
-  }, []);
+    useEffect(() => {
+        const fetchData = async () => {
+            setIsLoading(true);
+            setError(null);
+            try {
+                const response = await axios.get(`${backendUrl}/api/portfolio/project/`);
+                setEducation(response.data);
+            } catch (error) {
+                console.error('Error fetching project:', error);
+                setError(error);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+        fetchData();
+    }, []);
+	
+	const handleGoBack= () =>{
+		navigate('/Home');
+	};
 
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+    if (isLoading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error.message}</p>;
+
 
   return (
     <div className="Projects">
