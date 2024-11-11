@@ -18,7 +18,7 @@ function Project() {
             setError(null);
             try {
                 const response = await axios.get(`${backendUrl}/api/portfolio/project/`);
-                setEducation(response.data);
+                setProject(response.data);
             } catch (error) {
                 console.error('Error fetching project:', error);
                 setError(error);
@@ -40,9 +40,9 @@ function Project() {
   return (
     <div className="Projects">
       <h1>Projects</h1>
-      {projects.length > 0 ? (
+      {project.length > 0 ? (
         <div className="project-items">
-          {projects.map((project) => (
+          {project.map((project) => (
             <div className="project-item" key={project.id}>
               <strong>{project.name}</strong><br />
               {project.description && <p>{project.description}</p>}
