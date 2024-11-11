@@ -14,7 +14,7 @@ function Project() {
       setIsLoading(true);
       setError(null);
       try {
-        const response = await axios.get(`${backendUrl}/api/portfolio/projects/`);
+        const response = await axios.get(`${backendUrl}/api/portfolio/project/`);
         setProjects(response.data);
       } catch (error) {
         console.error('Error fetching projects:', error);
