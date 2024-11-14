@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../App.css'
 
@@ -10,7 +9,6 @@ function Contact() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,10 +27,6 @@ function Contact() {
 
     fetchData();
   }, []);
-  
-  const handleGoBack =() =>{
-	navigate('/Home');
-  };
 
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
@@ -63,7 +57,6 @@ function Contact() {
         <p>No contacts available.</p>
       )}
 	  <br/>
-      <button onClick={handleGoBack} class-name="go-back-button">Go Back to Home</button>
     </div>
   );
 }

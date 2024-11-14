@@ -1,7 +1,10 @@
-button{
-	background-color: #23a6d5;
-	border-radius: 5px;
-	font-family: 'Roboto', sans-serif;
+/* Button styling */
+button {
+    background-color: #3b3f45;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    padding: 10px;
+    color: white;
 }
 
 /* General body styles */
@@ -10,17 +13,20 @@ ul {
 }
 
 body {
-    background-color: #f0f2f5;
+    background-color: White;
+    background-image: url("https://images.unsplash.com/photo-1517999144091-3d9dca6d1e43?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
     margin-top: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: black;
 }
 
-
-
+.Contact{
+	background-color: white;
+	animation: containerColorChange 6s linear infinite;
+}
 /* Navbar styles */
 .navbar {
     background-color: #3b3f45;
@@ -32,8 +38,32 @@ body {
     width: 100%;
     z-index: 1000;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	animation: navbarColorChange 5s ease-in-out infinite; /* Adjust the timing as needed */
+	transition: background-color 0.5s ease, color 0.5s ease;
 }
-
+//* Navbar Color Animation */
+@keyframes navbarColorChange {
+    0% {
+        background-color: white;
+        color: black;
+    }
+    25% {
+        background-color: #dcdcdc; /* Light grey */
+        color: black;
+    }
+    50% {
+        background-color: #bdc3c7; /* Slightly darker grey */
+        color: black;
+    }
+    75% {
+        background-color: #34495e; /* Dark blue-grey */
+        color: white;
+    }
+    100% {
+        background-color: #3b3f45; /* Original color */
+        color: white;
+    }
+}
 .navbar-logo {
     font-family: 'Pacifico', cursive;
     color: #ffffff;
@@ -78,7 +108,7 @@ body {
 
 .skill-columns {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: minmax(100px, auto);
     gap: 2rem;
     justify-content: center;
@@ -103,35 +133,53 @@ body {
     color: #2c3e50;
 }
 
-/* Headers */
-.Skill h1, .Contact h1, .Education h1, .Project h1 {
+.Contact h1{
+	font-size: 2.2rem;
+	color: black;
+	margin-bottom: 20px;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.Skill h1, .Education h1, .Projects h1 {
     font-size: 2.2rem;
-    color: #2c3e50;
+    color: White;
     margin-bottom: 20px;
     text-align: center;
     font-family: 'Roboto', sans-serif;
 }
 
+/* Project Section Styles */
+.project-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
 /* Education Section Styles */
 .Education {
-    max-width: 1500px;
+    max-width: 100vw;
     margin: 10;
-    padding: 10rem;
 }
 
 .education-columns {
-    display: flex;                 /* Use flexbox */
-    flex-wrap: wrap;               /* Allow items to wrap when necessary */
-    gap: 2rem;                     /* Space between items */
-    justify-content: center;       /* Center items horizontally */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    padding: 20px;
 }
 
 .education-item {
-    flex: 1 1 calc(33% - 2rem);    /* Each item takes up 1/3 of the width minus the gap */
-    min-width: 250px;              /* Ensure each item has a minimum width */
     padding: 1.5rem;
     border: 1px solid #ddd;
     border-radius: 12px;
+	margin-bottom: 2rem;
     background-color: #ffffff;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -149,12 +197,10 @@ body {
 
 /* Other Sections */
 .Contact, .Education, .Project {
-    background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     padding: 2rem;
     margin-top: 20px;
-    border: 1px solid #e0e0e0;
 }
 
 /* Animations for Entry */
@@ -164,7 +210,9 @@ body {
 }
 
 @keyframes fadeIn {
-    to { opacity: 1; }
+    to {
+        opacity: 1;
+    }
 }
 
 .slide-up {
@@ -197,13 +245,6 @@ body {
     transform: translateY(-3px);
 }
 
-/* Enhanced Link Styles */
-.Link {
-    font-weight: 600;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
 .home-container {
     background-color: #ffffff;
     border-radius: 12px;
@@ -212,3 +253,99 @@ body {
     margin-top: 30px;
     border: 1px solid #e0e0e0;
 }
+
+/* Flip Card Styles */
+.flip-card {
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+    margin: 20px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.flip-card-front {
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.flip-card-back {
+    background-color: #2c3e50;
+    color: white;
+    transform: rotateY(180deg);
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Button inside the card */
+.project-link {
+    background-color: #3b3f45;
+    border: none;
+    padding: 8px 12px;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #2c3e50;
+}
+
+
+
+@keyframes containerColorChange {
+    0% {
+        background-color: #ffffff;  /* Initial white background */
+        color: black;  /* Text color */
+    }
+    25% {
+        background-color: #f1f1f1;  /* Light grey */
+        color: black;  /* Keep text visible */
+    }
+    50% {
+        background-color: #e0e0e0;  /* Lighter grey */
+        color: black;  /* Text color */
+    }
+    75% {
+        background-color: #d0d0d0;  /* Soft grey with a hint of blue */
+        color: black;  /* Text color */
+    }
+    100% {
+        background-color: #ffffff;  /* Return to original white */
+        color: black;  /* Text color */
+    }
+}
+
+
