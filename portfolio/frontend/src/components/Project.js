@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../App.css';
 
-const backendUrl = 'https://projects-yybm.onrender.com';
+//const backendUrl = 'https://projects-yybm.onrender.com';
+const backendUrl = 'http://127.0.0.1:8000';
 
 function Project() {
   const [projects, setProjects] = useState([]);

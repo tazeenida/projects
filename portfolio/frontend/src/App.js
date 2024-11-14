@@ -1,5 +1,4 @@
 import './App.css';
-import Contact from './components/Contact';
 import Education from './components/Education';
 import Skill from './components/Skill';
 import Home from './components/Home';
@@ -12,7 +11,6 @@ function App() {
     <div className="App"> 
 	  <Navbar />
         <Routes>
-          <Route path="/contact" element={<Contact />} />
 		  <Route path="/education" element={<Education />}/>
 		  <Route path="/home" element={<Home />}/>
 		  <Route path="/" element={<Navigate to="/Home" />} />

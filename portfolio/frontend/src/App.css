@@ -13,8 +13,8 @@ ul {
 }
 
 body {
-    background-color: white;
-    background-image: url("https://images.unsplash.com/photo-1517999144091-3d9dca6d1e43?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+	background-color: #121212;
+   /* background-image: url("https://images.unsplash.com/photo-1517999144091-3d9dca6d1e43?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");*/
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-top: 80px;
     display: flex;
@@ -23,70 +23,49 @@ body {
     color: black;
 }
 
-.Contact {
-    background-color: white;
-    animation: containerColorChange 6s linear infinite;
-}
-
-/* Navbar styles */
+/* Navbar with contact to the right */
 .navbar {
-    background-color: #3b3f45;
+    background-color: Black;
     color: white;
-    padding: 15px;
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    animation: navbarColorChange 6s linear infinite;
+    height: 80px;
+    position: fixed;
+    display: flex;
+    justify-content: space-between; /* Spacing between logo and contact */
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
-/* Navbar Color Animation */
-@keyframes navbarColorChange {
-    0% {
-        background-color: white;
-        color: black;
-    }
-    25% {
-        background-color: grey;
-        color: white;
-    }
-    50% {
-        background-color: darkgray;  /* Corrected color */
-    }
-    75% {
-        background-color: #34495e;
-    }
-    100% {
-        background-color: #3b3f45;
-    }
-}
 
+/* Navbar Logo */
 .navbar-logo {
     font-family: 'Pacifico', cursive;
     color: #ffffff;
-    font-size: 30px;
+    font-size: 24px; /* Reduced font size for logo */
     font-weight: bold;
     text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease;
+    margin: 10px; /* Remove extra margin */
+    display: inline-block; /* Ensure it fits properly */
 }
 
-.navbar-logo:hover {
-    color: #23a6d5;
-    transform: scale(1.1);
-}
-
+/* Navbar Menu */
 .navbar-menu {
     list-style-type: none;
-    display: flex;
-    margin: 0;
+    display: flex; /* Use flexbox for menu items */
+    margin: 0; /* Remove extra margin */
+    padding: 0; /* Remove padding */
+    align-items: center; /* Vertically align items */
 }
 
 .navbar-item {
-    margin: 0 15px;
+    margin: 0 10px; /* Space out navbar items */
 }
 
+/* Navbar Link */
 .navbar-link {
     text-decoration: none;
     color: white;
@@ -95,11 +74,42 @@ body {
 }
 
 .navbar-link:hover {
+    color: #23a6d5; /* Hover effect for navbar links */
+}
+/* Adjust navbar to keep space for contact info */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+/* Styling for the contact-info section */
+.contact-info {
+    margin-left: auto; /* Pushes the contact-info div to the right */
+    margin-top: -10px; /* Move the contact info up by 10px (adjust as needed) */
+    display: flex;
+    justify-content: flex-end; /* Aligns content to the right */
+    color: white;
+}
+
+
+.contact-info a {
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+
+.contact-info a:hover {
     color: #23a6d5;
 }
 
+
 /* Skill Section Styles */
-.Skill, .Contact {
+.Skill {
     max-width: 1200px;
     margin: auto;
     padding: 2rem;
@@ -132,25 +142,6 @@ body {
     color: #2c3e50;
 }
 
-.Contact h1 {
-    font-size: 2.2rem;
-    color: black;
-    margin-bottom: 20px;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.Skill h1, .Education h1, .Projects h1 {
-    font-size: 2.2rem;
-    color: white;
-    margin-bottom: 20px;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-}
-
 /* Project Section Styles */
 .project-items {
     display: grid;
@@ -159,43 +150,7 @@ body {
     justify-content: center;
     padding: 20px;
 }
-
-/* Education Section Styles */
-.Education {
-    max-width: 100vw;
-    margin: 10px;  /* Corrected margin value */
-}
-
-.education-columns {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 2rem;
-    justify-content: center;
-    padding: 20px;
-}
-
-.education-item {
-    padding: 1.5rem;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    margin-bottom: 2rem;
-    background-color: #ffffff;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.education-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.education-item strong {
-    font-size: 20px;
-    color: #2c3e50;
-}
-
-/* Other Sections */
-.Contact, .Education, .Project {
+.Project {
     border-radius: 12px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     padding: 2rem;
@@ -232,12 +187,10 @@ body {
 }
 
 .home-container {
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-    padding: 60px;
-    margin-top: 30px;
-    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin-top: 10px;
+	text-align: center;
+	color: white;
 }
 
 /* Flip Card Styles */
@@ -330,4 +283,117 @@ body {
         background-color: #ffffff;
         color: black;
     }
+}
+
+.contact-info {
+    margin-left: auto; /* Push the contact-info div to the right */
+}
+/* General styling for the timeline container */
+.education-timeline-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto; /* Makes it scrollable horizontally if needed */
+    padding: 20px 0;
+}
+
+/* The timeline itself (a horizontal line) */
+.education-timeline {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: relative;
+    padding: 0 20px;
+}
+
+/* Animation for the timeline items */
+.timeline-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px; /* Control width of each event */
+    margin-right: 50px; /* Space between events */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    opacity: 0; /* Initially hidden */
+    transform: translateX(-50px); /* Initially off-screen to the left */
+    animation: slideIn 0.5s forwards; /* Slide in animation */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s, color 0.3s;
+    animation-delay: var(--animation-delay); /* Stagger animation delay for each item */
+}
+
+/* Keyframes for slide-in animation */
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Move to normal position */
+    }
+}
+
+/* Hover effect for timeline item */
+.timeline-item:hover {
+    transform: translateY(-10px) scale(1.05); /* Scale up slightly and lift */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: #23a6d5; /* Change background color */
+    color: Black; /* Change text color */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+/* Add a small arrow between events */
+.timeline-item::after {
+    content: '→';
+    position: absolute;
+    right: -20px; /* Positioning the arrow */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #4CAF50;
+}
+
+/* Remove the arrow on the last item */
+.timeline-item:last-child::after {
+    display: none;
+}
+
+/* Styling for date section */
+.timeline-date {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+/* Content styling */
+.timeline-content {
+    font-size: 16px;
+    color: black;
+}
+
+.timeline-content strong {
+    font-size: 18px;
+    color: #23a6d5;
+}
+
+
+
+
+/* Change color of Degree text when hovering over the timeline item */
+.timeline-item:hover .item-text {
+    color: black;  /* Change Degree text color to black on hover */
+    font-weight: bold;  /* Optional: Make the degree text bold on hover */
+}
+
+.timeline-item:hover .timeline-date {
+    font-size: 14px;
+    color: Black;
+    margin-bottom: 10px;
+}
+
+h1{
+	color: white;
+	margin: 20px;
+	text-align: center;
 }

@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../App.css';
 
-const backendUrl = 'https://projects-yybm.onrender.com';
+//const backendUrl = 'https://projects-yybm.onrender.com';
+const backendUrl = 'http://127.0.0.1:8000';
 
 function Education() {
     const [education, setEducation] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
-	
-	const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -28,39 +26,40 @@ function Education() {
         };
         fetchData();
     }, []);
-	
-	const handleGoBack= () =>{
-		navigate('/Home');
-	};
 
     if (isLoading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
 
     return (
         <div className="Education">
-            <h1>Education</h1>
+            <h1 className="education-header">Education Timeline</h1>
             {education.length > 0 ? (
-                <div className="education-items">
-                    {education.map((item) => (
-                        <div className="education-item" key={item.id}>
-                            <strong>{item.name}</strong><br />
-                            {item.degree && <span><strong>Degree:</strong> {item.degree}<br /></span>}
-                            {item.university && <span><strong>University:</strong> {item.university}<br /></span>}
-                            {item.level && <span><strong>Level:</strong> {item.level}<br /></span>}
-                            {item.start_month && item.start_year && (
-                                <span><strong>Start Date:</strong> {item.start_month} {item.start_year}<br /></span>
-                            )}
-                            {item.end_month && item.end_year && (
-                                <span><strong>End Date:</strong> {item.end_month} {item.end_year}<br /></span>
-                            )}
-                        </div>
-                    ))}
+                <div className="education-timeline-container">
+                    <div className="education-timeline">
+                        {education.map((item) => (
+                            <div className="timeline-item" key={item.id}>
+                                <div className="timeline-content">
+                                    <strong>{item.name}</strong>
+                                    <div className="timeline-date">
+                                        {item.start_month && item.start_year && (
+                                            <span>{item.start_month} {item.start_year}</span>
+                                        )}
+                                        {item.end_month && item.end_year && (
+                                            <span> - {item.end_month} {item.end_year}</span>
+                                        )}
+                                    </div>
+                                    {item.degree && <p><strong className="item-text">Degree:</strong> {item.degree}</p>}
+                                    {item.university && <p><strong  className="item-text">University:</strong> {item.university}</p>}
+                                    {item.level && <p><strong className="item-text">Level:</strong> {item.level}</p>}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             ) : (
                 <p>No education available.</p>
             )}
             <br />
-           <button onClick={handleGoBack} className="go-back-home">Go Back to Home</button>
         </div>
     );
 }
