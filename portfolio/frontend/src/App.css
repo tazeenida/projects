@@ -29,7 +29,7 @@ body {
 .navbar {
     background-color: #3b3f45;
     color: white;
-    padding: 15px;
+    padding: 10px;
     position: fixed;
     top: 0;
     left: 0;
@@ -38,9 +38,22 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     animation: navbarColorChange 8s ease-in-out infinite;
     transition: background-color 0.5s ease, color 0.5s ease;
-	height: 60px;
-	box-sizing: border-box;
+    height: 60px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between; /* Space out the items */
+    align-items: center; /* Center items vertically */
+    overflow: hidden; /* Prevent items from overflowing */
+	font-size: 14px;
 }
+
+.navbar-item {
+    max-width: calc(100% / 3); /* Adjust depending on item count */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+}
+
 
 /* Navbar Color Animation */
 @keyframes navbarColorChange {
