@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../App.css';
 
-//const backendUrl = 'https://projects-yybm.onrender.com';
-const backendUrl = 'http://127.0.0.1:8000';
+const backendUrl = 'https://projects-yybm.onrender.com'; 
+
 function Skill() {
     const [skill, setSkill] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
