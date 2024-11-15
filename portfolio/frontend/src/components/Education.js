@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../App.css';
+import collegeLogo from '../images/college-logo.png';
+import pfwCollegeLogo from '../images/Purdue_Fort_Wayne_Mastodons_logo.svg.png';
 
 const backendUrl = 'https://projects-yybm.onrender.com';
 
@@ -8,7 +10,10 @@ function Education() {
     const [education, setEducation] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
-
+	const imageMap = {
+	        "St. Francis College for Women": collegeLogo,
+	        "Purdue University, Fort Wayne, IN": pfwCollegeLogo,
+	    };
     useEffect(() => {
         const fetchData = async () => {
             setIsLoading(true);
@@ -38,6 +43,9 @@ function Education() {
                         {education.map((item) => (
                             <div className="timeline-item" key={item.id}>
                                 <div className="timeline-content">
+									<div className="timeline-image">
+								    	<img src={imageMap[item.university] || collegeLogo} alt={`${item.name} logo`} className="education-logo"/>
+									</div>
                                     <strong>{item.name}</strong>
                                     <div className="timeline-date">
                                         {item.start_month && item.start_year && (

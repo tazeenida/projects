@@ -13,24 +13,24 @@ const Navbar = () => {
                 </Link>
                 <ul className="navbar-menu">
                     <li className="navbar-item">
-                        <Link to="/home" className="navbar-link">
+                        <a href="#Banner" className="navbar-link">
                             <FaHome style={{ marginRight: '8px' }} /> Home
-                        </Link>
+                        </a>
                     </li>
                     <li className="navbar-item">
-                        <Link to="/education" className="navbar-link">
+                        <a href="#education" className="navbar-link">
                             <FaGraduationCap style={{ marginRight: '8px' }} /> Education
-                        </Link>
+                        </a>
                     </li>
                     <li className="navbar-item">
-                        <Link to="/project" className="navbar-link">
+                        <a href="#project" className="navbar-link">
                             <FaProjectDiagram style={{ marginRight: '8px' }} /> Projects
-                        </Link>
+                        </a>
                     </li>
                     <li className="navbar-item">
-                        <Link to="/skill" className="navbar-link">
+                        <a href="#skill" className="navbar-link">
                             <FaTools style={{ marginRight: '8px' }} /> Skills
-                        </Link>
+                        </a>
                     </li>
                 </ul>
                 <div className="contact-info">

@@ -37,6 +37,7 @@ body {
     align-items: center;
     padding: 0 20px;
     box-sizing: border-box;
+	z-index: 1000;
 }
 
 
@@ -112,35 +113,117 @@ body {
 .Skill {
     max-width: 1200px;
     margin: auto;
-    padding: 2rem;
+    padding: 3rem;
+    background-color: #1e1e1e;  /* Slightly darker background for better contrast */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* Skill Columns - Use Flexbox for responsiveness */
 .skill-columns {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: minmax(100px, auto);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  /* Use auto-fit for responsive layout */
     gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    transition: background-color 0.5s ease-in-out;
+}
+
+/* Skill Item Card */
+.skill-item {
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
+.skill-item:hover img {
+    transform: scale(1.1);  /* Slight zoom-in effect on hover */
+}
+
+/* Skill Item Title */
+.skill-item strong {
+    font-size: 20px;
+    color: #2c3e50;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.skill-item:hover strong {
+    color: #23a6d5;  /* Change title color on hover */
+}
+
+/* Description inside skill item */
+.skill-item p {
+    color: black;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Add skill bar or skill level */
+/* Styling for skill container */
+.skill-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Skill item box */
 .skill-item {
     padding: 1.5rem;
     border: 1px solid #ddd;
     border-radius: 12px;
     background-color: #ffffff;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease-in-out;
 }
 
+/* Hover effect */
 .skill-item:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	background-color: grey;
 }
 
-.skill-item strong {
-    font-size: 20px;
-    color: #2c3e50;
+/* Progress bar styling */
+.progress-bar {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 5px;
+    height: 8px;
+    margin-top: 10px;
 }
+
+.progress {
+    height: 100%;
+    background-color: #23a6d5;
+    border-radius: 5px;
+}
+
+/* Skill header styling */
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Skill level text */
+.skill-level {
+    font-size: 12px;
+    color: #777;
+}
+
 
 /* Project Section Styles */
 .project-items {
@@ -187,7 +270,7 @@ body {
 }
 
 .home-container {
-    padding: 20px;
+    padding: 40px;
     margin-top: 10px;
 	text-align: center;
 	color: white;
@@ -286,8 +369,39 @@ body {
 }
 
 .contact-info {
-    margin-left: auto; /* Push the contact-info div to the right */
+  padding: 20px;
+  text-align: center;
+  margin-top: 2px;
 }
+
+.contact-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-item {
+  margin: 10px 0;
+  text-align: left;
+}
+
+.contact-details {
+  margin-top: 5px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #0077b5; /* LinkedIn Blue as hover color */
+}
+
 /* General styling for the timeline container */
 .education-timeline-container {
     display: flex;
@@ -345,13 +459,13 @@ body {
 
 /* Add a small arrow between events */
 .timeline-item::after {
-    content: '→';
+    content: '⇨';
     position: absolute;
     right: -20px; /* Positioning the arrow */
     top: 50%;
     transform: translateY(-50%);
     font-size: 24px;
-    color: #4CAF50;
+    color:#23a6d5 ;
 }
 
 /* Remove the arrow on the last item */
@@ -397,3 +511,20 @@ h1{
 	margin: 20px;
 	text-align: center;
 }
+
+.Education-Section, .Experience-Section, .Project-Section, .Skill-Section{
+	border-top: 2px solid #23a6d5;
+	padding: 20px;
+	margin-top: 40px;
+}
+
+.education-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
