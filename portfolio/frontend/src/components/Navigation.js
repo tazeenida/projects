@@ -12,11 +12,11 @@ const Navbar = () => {
                     Nida Tazeen
                 </Link>
                 <ul className="navbar-menu">
-                    <li className="navbar-item">
-                        <a href="#Banner" className="navbar-link">
-                            <FaHome style={{ marginRight: '8px' }} /> Home
-                        </a>
-                    </li>
+				    <li className="navbar-item">
+				        <a href="/" className="navbar-link" aria-label="Home">
+				            <FaHome style={{ marginRight: '8px' }} /> Home
+				        </a>
+				    </li>
                     <li className="navbar-item">
                         <a href="#education" className="navbar-link">
                             <FaGraduationCap style={{ marginRight: '8px' }} /> Education
