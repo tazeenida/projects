@@ -5,7 +5,6 @@ from myapp import views as portfolio_views
 from rest_framework_simplejwt import views as jwt_views
 
 router_portfolio= routers.DefaultRouter()
-router_portfolio.register(r'experience', portfolio_views.ExperienceView, basename='experience')
 router_portfolio.register(r'education', portfolio_views.EducationView, basename='education')
 router_portfolio.register(r'project', portfolio_views.ProjectView, basename='project')
 router_portfolio.register(r'skill', portfolio_views.SkillView, basename='skill')

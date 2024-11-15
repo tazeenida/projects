@@ -2,29 +2,6 @@ from django.db import models
 from uuid import uuid4
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
-
-
-class Experience(models.Model):
-    experience_id = models.UUIDField(default=uuid4, editable=False, unique=True, primary_key=True)
-    company = models.CharField(max_length=255, blank=True, null=True)
-    role = models.CharField(max_length=255, blank=True, null=True)
-    start_month = models.CharField(max_length=255, blank=True, null=True)
-    start_year = models.PositiveSmallIntegerField(blank=True, null=True)
-    end_month = models.CharField(max_length=255, blank=True, null=True)
-    end_year = models.PositiveSmallIntegerField(blank=True, null=True)
-    job_description = models.TextField(blank=True, null=True)
-    
-    class Meta:
-        ordering = ['start_year', 'start_month']
-    
-    def __str__(self):
-        return f"{self.role} at {self.company}" or 'No Experience'
-    
-    def clean(self):
-        super().clean()
-        if self.start_year and self.end_year:
-            if self.end_year < self.start_year:
-                raise ValidationError(_('End year cannot be earlier than the start year'))
                 
 LEVEL_CHOICES=[
 	('bachelor', 'Bachelor'),
