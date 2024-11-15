@@ -1,7 +1,12 @@
 from rest_framework import serializers
-from .models import Education, Project, Skill, Contact
+from .models import Experience, Education, Project, Skill, Contact
 from uuid import uuid4
 
+class ExperienceSerializer(serializers.ModelSerializer):
+	class Meta:
+		model=Experience
+		fields= '__all__'
+		
 class EducationSerializer(serializers.ModelSerializer):
 	class Meta:
 		model=Education

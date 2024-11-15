@@ -43,6 +43,9 @@ const Home = () => {
         <div className="Education-Section" id="education">
           <Education />
         </div>
+		<div className="Experience-Section" id="experience">
+		  <Experience />
+		</div>
         <div className="Project-Section" id="project">
           <Project />
         </div>

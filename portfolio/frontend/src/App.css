@@ -403,7 +403,7 @@ body {
 }
 
 /* General styling for the timeline container */
-.education-timeline-container {
+.education-timeline-container, .experience-timeline-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -412,7 +412,7 @@ body {
 }
 
 /* The timeline itself (a horizontal line) */
-.education-timeline {
+.education-timeline, .experience-timeline {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
