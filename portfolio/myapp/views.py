@@ -1,12 +1,8 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from .serializers import ExperienceSerializer, EducationSerializer, ProjectSerializer, SkillSerializer, ContactSerializer
-from .models import Experience, Education, Project, Skill, Contact
+from .serializers import EducationSerializer, ProjectSerializer, SkillSerializer, ContactSerializer
+from .models import Education, Project, Skill, Contact
 
-class ExperienceView(viewsets.ModelViewSet):
-	serializer_class=EducationSerializer
-	queryset=Experience.objects.all()
-	
 class EducationView(viewsets.ModelViewSet):
 	serializer_class=EducationSerializer
 	queryset=Education.objects.all()
