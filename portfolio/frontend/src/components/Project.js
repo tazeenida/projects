@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../App.css';
+import MastodonHub from '..//images/mastodonHub.png'
 
 const backendUrl = 'https://projects-yybm.onrender.com';
+
+const titlesToImages = {
+  "Book Recommendation System": "https://images.ctfassets.net/cnu0m8re1exe/4KwrJVfCGeyOKwm8PS2tjI/30026753d97e3b41a50560063126ded8/shutterstock_135114548.jpg?fm=jpg&fl=progressive&w=660&h=433&fit=fill",
+  "MastodonHub": MastodonHub,
+};
 
 function Project() {
   const [projects, setProjects] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-
+  
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
@@ -58,22 +63,23 @@ const ProjectCard = ({ project }) => {
     setIsFlipped((prev) => !prev);
   };
 
+  const backgroundImage = titlesToImages[project.title] || "https://images.ctfassets.net/cnu0m8re1exe/4KwrJVfCGeyOKwm8PS2tjI/30026753d97e3b41a50560063126ded8/shutterstock_135114548.jpg?fm=jpg&fl=progressive&w=660&h=433&fit=fill";
+
   return (
     <div
       className={`flip-card ${isFlipped ? "flipped" : ""}`}
       onClick={handleFlip}
     >
       <div className="flip-card-inner">
-        <div className="flip-card-front">
-		   <div>   
-          <h2>{project.title}</h2>
-		  
-		   <div>
-           <p><strong>Date:</strong> {project.date}</p>
-           <p><strong>Role:</strong> {project.role}</p>
-		   <p><strong>Technologies:</strong> {project.key_technologies}</p>
-		   </div>
-		   </div>
+        <div className="flip-card-front" style={{ backgroundImage: `url(${backgroundImage})` }}>
+          <div>
+            <h2>{project.title}</h2>
+            <div>
+              <p><strong>Date:</strong> {project.date}</p>
+              <p><strong>Role:</strong> {project.role}</p>
+              <p><strong>Technologies:</strong> {project.key_technologies}</p>
+            </div>
+          </div>
         </div>
         <div className="flip-card-back">
           <div className="project-description">

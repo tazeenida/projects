@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../App.css';
 
 const backendUrl = 'https://projects-yybm.onrender.com';
 
 function Skill() {
-    const [skill, setSkill] = useState([]);
+    const [skills, setSkills] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
-	
-	const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -18,9 +15,9 @@ function Skill() {
             setError(null);
             try {
                 const response = await axios.get(`${backendUrl}/api/portfolio/skill/`);
-                setSkill(response.data);
+                setSkills(response.data);
             } catch (error) {
-                console.error('Error fetching skill:', error);
+                console.error('Error fetching skills:', error);
                 setError(error);
             } finally {
                 setIsLoading(false);
@@ -31,28 +28,35 @@ function Skill() {
 
     if (isLoading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
-	
-	const handleGoBack = () => {
-	       navigate('/Home'); // Navigate programmatically to the Home page
-	   };
 
     return (
         <div className="Skill">
-            <h1>Skills</h1>
-            {skill.length > 0 ? (
+            <h1 className="Skill-header">Skills</h1>
+            {skills.length > 0 ? (
                 <div className="skill-columns">
-                    {skill.map((item) => (
-                        <div className="skill-item" key={item.id}>
-                            <strong>{item.name}</strong>
-                            <strong>{item.skill && <p>{item.skill}</p>}</strong>
+                    {skills.map((skill) => (
+                        <div className="skill-item" key={skill.id}>
+                            <div className="skill-header">
+                                <strong>{skill.name}</strong>
+                                <div className="skill-level">
+                                    {skill.level && <span>{skill.level}</span>}
+                                </div>
+                            </div>
+                            {skill.skill && <p>{skill.skill}</p>}
+                            {skill.level && (
+                                <div className="progress-bar">
+                                    <div
+                                        className="progress"
+                                        style={{ width: `${skill.level}%` }}
+                                    ></div>
+                                </div>
+                            )}
                         </div>
                     ))}
                 </div>
             ) : (
-                <p>No skill available.</p>
+                <p>No skills available.</p>
             )}
-            <br />
-           <button onClick={handleGoBack} className="go-back-button">Go back to Home</button>
         </div>
     );
 }
