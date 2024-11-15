@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaHome, FaGraduationCap, FaProjectDiagram, FaTools } from 'react-icons/fa'; // Import necessary icons
+import { FaHome, FaGraduationCap, FaProjectDiagram, FaTools, FaBriefcase } from 'react-icons/fa'; // Import FaBriefcase for Experience
 import '../App.css';
 import Contact from './Contact';
 
@@ -12,14 +12,19 @@ const Navbar = () => {
                     Nida Tazeen
                 </Link>
                 <ul className="navbar-menu">
-				    <li className="navbar-item">
-				        <a href="/" className="navbar-link" aria-label="Home">
-				            <FaHome style={{ marginRight: '8px' }} /> Home
-				        </a>
-				    </li>
+                    <li className="navbar-item">
+                        <Link to="/" className="navbar-link" aria-label="Home">
+                            <FaHome style={{ marginRight: '8px' }} /> Home
+                        </Link>
+                    </li>
                     <li className="navbar-item">
                         <a href="#education" className="navbar-link">
                             <FaGraduationCap style={{ marginRight: '8px' }} /> Education
+                        </a>
+                    </li>
+                    <li className="navbar-item">
+                        <a href="#experience" className="navbar-link">
+                            <FaBriefcase style={{ marginRight: '8px' }} /> Experience
                         </a>
                     </li>
                     <li className="navbar-item">
