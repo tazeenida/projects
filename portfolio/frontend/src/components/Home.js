@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import '../App.css';
 import banner from '../images/home-banner.png';
 import Education from './Education';
+import Experience from './Experience';
 import Project from './Project';
 import Skill from './Skill';
 
