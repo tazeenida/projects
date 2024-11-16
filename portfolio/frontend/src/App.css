@@ -173,10 +173,11 @@ body {
 /* Styling for skill container */
 .skill-columns {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     justify-content: center;
-    padding: 20px;
+    padding: 10px;
+	font-size: 14px;
 }
 
 /* Skill item box */
