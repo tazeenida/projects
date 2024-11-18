@@ -1,33 +1,42 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import '../App.css';
 
-const backendUrl = 'https://projects-yybm.onrender.com';
-
 function Experience() {
-    const [experience, setExperience] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            setIsLoading(true);
-            setError(null);
-            try {
-                const response = await axios.get(`${backendUrl}/api/portfolio/experience/`);
-                setExperience(response.data);
-            } catch (error) {
-                console.error('Error fetching experience:', error);
-                setError(error);
-            } finally {
-                setIsLoading(false);
-            }
-        };
-        fetchData();
-    }, []);
-
-    if (isLoading) return <p>Loading...</p>;
-    if (error) return <p>Error: {error.message}</p>;
+    const experience = [
+        {
+            experience_id: 1,
+            role: "MuleSoft Integration Consultant / Developer",
+            company: "Wise Labs for Thames Water",
+            start_month: "September",
+            start_year: "2021",
+            end_month: "October",
+            end_year: "2023",
+            job_description: `
+                • Conducted code and design reviews, documented best practices, and produced integration patterns.
+                • Designed and promoted APIs to the API Manager.
+                • Applied security and performance policies, including Client ID and Secret, SLA Policy, and JWT Policy.
+                • Scripted custom data transformations using Dataweave.
+                • Developed and implemented System API for payment token integration with Azure Database.
+                • Engineered AWS Experience API to interact with customer enquiry, balance enquiry, and VoiceSage APIs.
+                • Executed end-to-end automation for Pre-Due SMS Reminder through VoiceSage, enhancing customer notifications for approaching due dates for bill payment.
+            `
+        },
+        {
+            experience_id: 2,
+            role: "MuleSoft Integration Consultant / Developer",
+            company: "Wise Labs for Nestle",
+            start_month: "September",
+            start_year: "2020",
+            end_month: "August",
+            end_year: "2021",
+            job_description: `
+                • Utilized Dataweave scripting to access payloads and transform data.
+                • Deployed APIs in the Design Center and API Manager, and allocated vcores on the MuleSoft Platform.
+                • Developed and crafted API RAML for optimal usage, incorporating validation and security traits.
+                • Implemented end-to-end integration for various business systems.
+            `
+        },
+    ];
 
     return (
         <div className="Experience">

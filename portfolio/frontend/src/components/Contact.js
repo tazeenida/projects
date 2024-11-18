@@ -1,43 +1,24 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import '../App.css';
 import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
 
-const backendUrl = 'https://projects-yybm.onrender.com';
+const contact = [
+  {
+    contact_id: "ca5db0da-e7f8-40c1-8bcd-b8b6737b4ea8",
+    email: "nidatazeen@outlook.com",
+    github: "https://github.com/tazeenida/projects",
+    linkedin: "https://www.linkedin.com/in/nida-tazeen/"
+  }
+];
 
 function Contact() {
-  const [contact, setContact] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      setError(null);
-      try {
-        const response = await axios.get(`${backendUrl}/api/portfolio/contact/`);
-        setContact(response.data);
-      } catch (error) {
-        console.error('Error fetching contacts:', error);
-        setError(error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  if (isLoading) return <p>Loading contact information...</p>;
-  if (error) return <p>Error fetching contact details: {error.message}</p>;
-
   return (
     <div className="contact-info">
       {contact.length > 0 ? (
         <ul className="contact-list">
           {contact.map((item) => (
-            <li key={item.id} className="contact-item">
-              <strong>{item.name}</strong>
+            <li key={item.contact_id} className="contact-item">
+              <strong>Contact Information</strong>
               <div className="contact-details">
                 {item.email && (
                   <a href={`mailto:${item.email}`} className="contact-link">

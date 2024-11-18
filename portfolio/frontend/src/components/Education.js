@@ -1,38 +1,49 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import '../App.css';
 import collegeLogo from '../images/college-logo.png';
 import pfwCollegeLogo from '../images/Purdue_Fort_Wayne_Mastodons_logo.svg.png';
 
-const backendUrl = 'https://projects-yybm.onrender.com';
+const imageMap = {
+    "St. Francis College for Women": collegeLogo,
+    "Purdue University, Fort Wayne, IN": pfwCollegeLogo,
+};
 
 function Education() {
-    const [education, setEducation] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState(null);
-	const imageMap = {
-	        "St. Francis College for Women": collegeLogo,
-	        "Purdue University, Fort Wayne, IN": pfwCollegeLogo,
-	    };
-    useEffect(() => {
-        const fetchData = async () => {
-            setIsLoading(true);
-            setError(null);
-            try {
-                const response = await axios.get(`${backendUrl}/api/portfolio/education/`);
-                setEducation(response.data);
-            } catch (error) {
-                console.error('Error fetching education:', error);
-                setError(error);
-            } finally {
-                setIsLoading(false);
-            }
-        };
-        fetchData();
-    }, []);
-
-    if (isLoading) return <p>Loading...</p>;
-    if (error) return <p>Error: {error.message}</p>;
+    const education = [
+        {
+            id: 1,
+            name: "Purdue University, Fort Wayne, IN",
+            start_month: "August",
+            start_year: "2023",
+            end_month: "December",
+            end_year: "2025",
+            degree: "Master’s degree in Computer Science",
+            university: "Purdue University, Fort Wayne, IN",
+            level: "Graduate",
+        },
+        {
+            id: 2,
+            name: "St. Francis College for Women, Hyderabad, India",
+            start_month: "August",
+            start_year: "2015",
+            end_month: "April",
+            end_year: "2017",
+            degree: "Post Graduate Diploma in Human Resource Management",
+            university: "St. Francis College for Women, Hyderabad, India",
+            level: "Postgraduate",
+        },
+        {
+            id: 3,
+            name: "St. Francis College for Women, Hyderabad, India",
+            start_month: "August",
+            start_year: "2012",
+            end_month: "April",
+            end_year: "2016",
+            degree: "Bachelor of Commerce in International Business",
+            university: "St. Francis College for Women, Hyderabad, India",
+            level: "Undergraduate",
+        },
+    ];
 
     return (
         <div className="Education">
@@ -43,9 +54,13 @@ function Education() {
                         {education.map((item) => (
                             <div className="timeline-item" key={item.id}>
                                 <div className="timeline-content">
-									<div className="timeline-image">
-								    	<img src={imageMap[item.university] || collegeLogo} alt={`${item.name} logo`} className="education-logo"/>
-									</div>
+                                    <div className="timeline-image">
+                                        <img
+                                            src={imageMap[item.university] || collegeLogo}
+                                            alt={`${item.name} logo`}
+                                            className="education-logo"
+                                        />
+                                    </div>
                                     <strong>{item.name}</strong>
                                     <div className="timeline-date">
                                         {item.start_month && item.start_year && (
@@ -56,7 +71,7 @@ function Education() {
                                         )}
                                     </div>
                                     {item.degree && <p><strong className="item-text">Degree:</strong> {item.degree}</p>}
-                                    {item.university && <p><strong  className="item-text">University:</strong> {item.university}</p>}
+                                    {item.university && <p><strong className="item-text">University:</strong> {item.university}</p>}
                                     {item.level && <p><strong className="item-text">Level:</strong> {item.level}</p>}
                                 </div>
                             </div>
