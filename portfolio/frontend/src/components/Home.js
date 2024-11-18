@@ -5,6 +5,8 @@ import Education from './Education';
 import Experience from './Experience';
 import Project from './Project';
 import Skill from './Skill';
+import FallingCubes from './FallingCubes';
+
 
 const Home = () => {
 	
@@ -23,19 +25,8 @@ const Home = () => {
           transition={{ duration: 0.3, delay: 1, ease: 'linear' }}
         >
           <div className="Events-Banner">
-            <motion.h1
-              className="fade-in"
-              animate={{ opacity: 1, y: 0 }}   // Fade-in and slide-up effect for the text
-              initial={{ opacity: 0, y: 50 }}   // Start with opacity 0 and y position down (50px)
-              transition={{ duration: 1, delay: 1.5, ease: 'easeOut' }}
-            >
-              Welcome to My Portfolio!
-            </motion.h1>
-			<div className="raindrops">
-			      {/* Multiple divs representing raindrops */}
-			      {[...Array(20)].map((_, index) => (
-			        <div key={index} className="raindrop" />
-			      ))}
+			<div className="App">
+			      <FallingCubes />
 			    </div>
           </div>
         </motion.div>

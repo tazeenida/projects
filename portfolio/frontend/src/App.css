@@ -1,87 +1,52 @@
-/* Banner container style */
-.banner-container {
+/* Cube container style */
+.cube-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 400px;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  background-color: #81D4FA; /* Background color */
-  animation: backgroundColorCycle 10s infinite ease-in-out; /* Optional: Background color animation */
+  height: 400px;  /* Same height as the banner */
+  width: 100%;    /* Full width, matching the banner */
+  position: relative; /* Same positioning for consistency */
+  overflow: hidden;  /* Ensures content stays within the container bounds */
+  background: #000; /* Black background for better visibility */
 }
-
-/* Raindrop container for holding the raindrops */
-.raindrops {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* Prevent interaction with raindrops */
+/* Animating the text color using the backgroundColorCycle animation */
+.welcome-text {
+  animation: backgroundColorCycle 10s infinite; /* Duration and repeat */
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
 }
-
-/* Raindrop styling */
-.raindrop {
-  position: absolute;
-  width: 2px;
-  height: 10px;
-  background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 50%;
-  animation: fall 1.5s linear infinite;
-}
-
-/* Animation for raindrops falling */
-@keyframes fall {
-  0% {
-    transform: translateY(-10px); /* Start slightly above the container */
-  }
-  100% {
-    transform: translateY(100vh); /* Fall to the bottom of the container */
-  }
-}
-
-/* Randomizing raindrop positions and speeds */
-.raindrop:nth-child(odd) {
-  animation-duration: 2s;
-}
-
-.raindrop:nth-child(even) {
-  animation-duration: 1.5s;
-}
-
-/* Randomizing start positions */
-.raindrop:nth-child(1) { left: 5%; animation-delay: 0s; }
-.raindrop:nth-child(2) { left: 10%; animation-delay: 0.2s; }
-.raindrop:nth-child(3) { left: 15%; animation-delay: 0.4s; }
-.raindrop:nth-child(4) { left: 20%; animation-delay: 0.6s; }
-.raindrop:nth-child(5) { left: 25%; animation-delay: 0.8s; }
-.raindrop:nth-child(6) { left: 30%; animation-delay: 1s; }
-.raindrop:nth-child(7) { left: 35%; animation-delay: 1.2s; }
-.raindrop:nth-child(8) { left: 40%; animation-delay: 1.4s; }
-.raindrop:nth-child(9) { left: 45%; animation-delay: 1.6s; }
-.raindrop:nth-child(10) { left: 50%; animation-delay: 1.8s; }
-.raindrop:nth-child(11) { left: 55%; animation-delay: 2s; }
-.raindrop:nth-child(12) { left: 60%; animation-delay: 2.2s; }
-.raindrop:nth-child(13) { left: 65%; animation-delay: 2.4s; }
-.raindrop:nth-child(14) { left: 70%; animation-delay: 2.6s; }
-.raindrop:nth-child(15) { left: 75%; animation-delay: 2.8s; }
-.raindrop:nth-child(16) { left: 80%; animation-delay: 3s; }
-.raindrop:nth-child(17) { left: 85%; animation-delay: 3.2s; }
-.raindrop:nth-child(18) { left: 90%; animation-delay: 3.4s; }
-.raindrop:nth-child(19) { left: 95%; animation-delay: 3.6s; }
-.raindrop:nth-child(20) { left: 100%; animation-delay: 3.8s; }
 
 /* Keyframes for background color transition */
 @keyframes backgroundColorCycle {
-  0% { background-color: #F8BBD0; } /* Pastel Pink */
-  14% { background-color: #FFCC80; } /* Pastel Orange */
-  28% { background-color: #FFEB3B; } /* Pastel Yellow */
-  42% { background-color: #A5D6A7; } /* Pastel Green */
-  57% { background-color: #81D4FA; } /* Pastel Blue */
-  71% { background-color: #B39DDB; } /* Pastel Indigo */
-  85% { background-color: #E1BEE7; } /* Pastel Violet */
-  100% { background-color: #F8BBD0; } /* Cycle back to pastel pink */
+  0% { color: #F8BBD0; } /* Pastel Pink */
+  14% { color: #FFCC80; } /* Pastel Orange */
+  28% { color: #FFEB3B; } /* Pastel Yellow */
+  42% { color: #A5D6A7; } /* Pastel Green */
+  57% { color: #81D4FA; } /* Pastel Blue */
+  71% { color: #B39DDB; } /* Pastel Indigo */
+  85% { color: #E1BEE7; } /* Pastel Violet */
+  100% { color: #F8BBD0; } /* Cycle back to pastel pink */
+}
+
+/* Define the cube styles */
+.cube {
+  position: absolute;
+  background: linear-gradient(45deg, #00f, #0ff);
+  transform: rotateX(45deg) rotateY(45deg);
+  animation: fall infinite linear;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Falling animation */
+@keyframes fall {
+  0% {
+    transform: translateY(-100vh) translateX(0);
+  }
+  100% {
+    transform: translateY(100vh) translateX(0);
+  }
 }
 
 /* Optional: Styles for the banner text */
