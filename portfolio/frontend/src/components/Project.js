@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import '../App.css';
 import MastodonHub from '../images/mastodonHub.png';
 import Food from '../images/food.jpg';
+import Movie from '../images/movie.jpg';
 
 const titlesToImages = {
   "Book Recommendation System": "https://images.ctfassets.net/cnu0m8re1exe/4KwrJVfCGeyOKwm8PS2tjI/30026753d97e3b41a50560063126ded8/shutterstock_135114548.jpg?fm=jpg&fl=progressive&w=660&h=433&fit=fill",
   "MastodonHub": MastodonHub,
   "Food Management System": Food,
-  "Movie Analyzer": "https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "Movie Analyzer": Movie,
 };
 
 function Project() {
