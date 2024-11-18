@@ -3,7 +3,6 @@ from uuid import uuid4
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
-
 class Experience(models.Model):
     experience_id = models.UUIDField(default=uuid4, editable=False, unique=True, primary_key=True)
     company = models.CharField(max_length=255, blank=True, null=True)
@@ -25,7 +24,7 @@ class Experience(models.Model):
         if self.start_year and self.end_year:
             if self.end_year < self.start_year:
                 raise ValidationError(_('End year cannot be earlier than the start year'))
-                
+                               
 LEVEL_CHOICES=[
 	('bachelor', 'Bachelor'),
 	('master', 'Master'),

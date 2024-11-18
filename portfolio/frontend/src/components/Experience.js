@@ -38,7 +38,7 @@ function Experience() {
                         {experience.map((item) => (
                             <div className="timeline-item" key={item.experience_id}>
                                 <div className="timeline-content">
-                                    <strong>{item.role}</strong> at <strong>{item.company}</strong>
+                                    <strong>{item.role}</strong>
                                     <div className="timeline-date">
                                         {item.start_month && item.start_year && (
                                             <span>{item.start_month} {item.start_year}</span>
@@ -47,8 +47,15 @@ function Experience() {
                                             <span> - {item.end_month} {item.end_year}</span>
                                         )}
                                     </div>
+                                    {item.company && (
+                                        <p>
+                                            <strong className="item-text">Company:</strong> {item.company}
+                                        </p>
+                                    )}
                                     {item.job_description && (
-                                        <p><strong className="item-text">Job Description:</strong> {item.job_description}</p>
+                                        <p>
+                                            <strong className="item-text">Description:</strong> {item.job_description}
+                                        </p>
                                     )}
                                 </div>
                             </div>

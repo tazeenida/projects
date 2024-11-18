@@ -4,7 +4,7 @@ from .serializers import ExperienceSerializer, EducationSerializer, ProjectSeria
 from .models import Experience, Education, Project, Skill, Contact
 
 class ExperienceView(viewsets.ModelViewSet):
-	serializer_class=EducationSerializer
+	serializer_class=ExperienceSerializer
 	queryset=Experience.objects.all()
 	
 class EducationView(viewsets.ModelViewSet):

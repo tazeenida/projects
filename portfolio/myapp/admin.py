@@ -11,15 +11,14 @@ class BaseAdmin(admin.ModelAdmin):
 	
 	def has_delete_permission(self, request,obj=None):
 		return request.user.is_superuser
-		s
+
 @admin.register(Experience)
 class ExperienceAdmin(BaseAdmin):
     list_display = ('experience_id', 'company', 'role', 'start_month', 'start_year', 'end_month', 'end_year')
     search_fields = ('company', 'role', 'start_month', 'start_year', 'end_month', 'end_year')
     list_filter = ('company', 'role', 'start_month', 'start_year', 'end_month', 'end_year')
     read_only_fields = ('experience_id',)
-
-		
+    		
 @admin.register(Education)
 class EducationAdmin(BaseAdmin):
 	list_display=('education_id', 'degree', 'university', 'level', 'start_month','start_year', 'end_month', 'end_year')
