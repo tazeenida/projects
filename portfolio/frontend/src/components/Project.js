@@ -49,7 +49,7 @@ function Project() {
 	      role: "Student",
 	      description: "The Movie Analyzer is a comprehensive web application designed to manage and analyze movie and TV show data. The project allows users to perform CRUD (Create, Read, Update, Delete) operations on a database of movies and TV shows. It includes detailed information such as movie titles, directors, release years, countries of origin, and their types (TV Show or Movie).",
 	      key_technologies: "Front-End: Vaadin\nBack-End: Spring Boot Application\nDatabase: SQLite\nDeployment Hosting: Render\nVersion Control: Git",
-	      link_to_github: "https://github.com/tazeenida/Food-Management-System/tree/main/FoodManagementSystem",
+	      link_to_github: "https://github.com/tazeenida/Homework_ACS560/tree/main/Movie_Analyzer_Vaadin",
 	      app_url: null,
 	    },
   ];
