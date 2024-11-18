@@ -18,7 +18,6 @@ function Contact() {
         <ul className="contact-list">
           {contact.map((item) => (
             <li key={item.contact_id} className="contact-item">
-              <strong>Contact Information</strong>
               <div className="contact-details">
                 {item.email && (
                   <a href={`mailto:${item.email}`} className="contact-link">
