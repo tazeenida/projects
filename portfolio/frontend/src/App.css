@@ -1,3 +1,62 @@
+/* Cube container style */
+.cube-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;  /* Same height as the banner */
+  width: 100%;    /* Full width, matching the banner */
+  position: relative; /* Same positioning for consistency */
+  overflow: hidden;  /* Ensures content stays within the container bounds */
+  background: #000; /* Black background for better visibility */
+}
+/* Animating the text color using the backgroundColorCycle animation */
+.welcome-text {
+  animation: backgroundColorCycle 10s infinite; /* Duration and repeat */
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Keyframes for background color transition */
+@keyframes backgroundColorCycle {
+  0% { color: #F8BBD0; } /* Pastel Pink */
+  14% { color: #FFCC80; } /* Pastel Orange */
+  28% { color: #FFEB3B; } /* Pastel Yellow */
+  42% { color: #A5D6A7; } /* Pastel Green */
+  57% { color: #81D4FA; } /* Pastel Blue */
+  71% { color: #B39DDB; } /* Pastel Indigo */
+  85% { color: #E1BEE7; } /* Pastel Violet */
+  100% { color: #F8BBD0; } /* Cycle back to pastel pink */
+}
+
+/* Define the cube styles */
+.cube {
+  position: absolute;
+  background: linear-gradient(45deg, #00f, #0ff);
+  transform: rotateX(45deg) rotateY(45deg);
+  animation: fall infinite linear;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Falling animation */
+@keyframes fall {
+  0% {
+    transform: translateY(-100vh) translateX(0);
+  }
+  100% {
+    transform: translateY(100vh) translateX(0);
+  }
+}
+
+/* Optional: Styles for the banner text */
+.Events-Banner h1 {
+  font-size: 2.5rem;  /* Adjust the size of the heading */
+  color: #333;  /* Text color */
+  text-align: center;  /* Ensure the text is centered */
+  margin: 0;  /* Remove default margins */
+  padding: 0;  /* Remove default padding */
+}
 /* Button styling */
 button {
     background-color: #3b3f45;
@@ -16,7 +75,7 @@ body {
 	background-color: #121212;
    /* background-image: url("https://images.unsplash.com/photo-1517999144091-3d9dca6d1e43?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");*/
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-top: 80px;
+    /*margin-top: 80px;*/
     display: flex;
     align-items: center;
     justify-content: center;

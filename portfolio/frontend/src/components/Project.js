@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../App.css';
-import MastodonHub from '..//images/mastodonHub.png'
+import MastodonHub from '../images/mastodonHub.png'
+import Food from '../images/food.jpg'
 
 const backendUrl = 'https://projects-yybm.onrender.com';
 
 const titlesToImages = {
   "Book Recommendation System": "https://images.ctfassets.net/cnu0m8re1exe/4KwrJVfCGeyOKwm8PS2tjI/30026753d97e3b41a50560063126ded8/shutterstock_135114548.jpg?fm=jpg&fl=progressive&w=660&h=433&fit=fill",
   "MastodonHub": MastodonHub,
+  "Food Management System": Food,
 };
 
 function Project() {
