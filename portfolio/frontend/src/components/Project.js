@@ -7,6 +7,7 @@ const titlesToImages = {
   "Book Recommendation System": "https://images.ctfassets.net/cnu0m8re1exe/4KwrJVfCGeyOKwm8PS2tjI/30026753d97e3b41a50560063126ded8/shutterstock_135114548.jpg?fm=jpg&fl=progressive&w=660&h=433&fit=fill",
   "MastodonHub": MastodonHub,
   "Food Management System": Food,
+  "Movie Analyzer": "https://plus.unsplash.com/premium_photo-1682125771198-f7cbed7cb868?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 };
 
 function Project() {
@@ -37,10 +38,20 @@ function Project() {
       date: "2024-11-18",
       role: "Student",
       description: "The Food Management System project aims to analyse food delivery orders from various restaurants, providing valuable insights into customer behaviour, restaurant preferences, and service efficiency. By evaluating key metrics such as delivery time, order cost, and food preparation time, this system strives to enhance decision-making processes for both customers and restaurants, leading to improved service quality and customer satisfaction.",
-      key_technologies: "",
+      key_technologies: "Front-End: Vaadin\nBack-End: Spring Boot Application\nDatabase: SQLite\nDeployment Hosting: Render\nVersion Control: Git",
       link_to_github: "https://github.com/tazeenida/Food-Management-System/tree/main/FoodManagementSystem",
       app_url: null,
     },
+	{
+	      project_id: "04b59d03-70d9-4d41-90f2-7d6e695f8d90",
+	      title: "Movie Analyzer",
+	      date: "2024-11-18",
+	      role: "Student",
+	      description: "The Movie Analyzer is a comprehensive web application designed to manage and analyze movie and TV show data. The project allows users to perform CRUD (Create, Read, Update, Delete) operations on a database of movies and TV shows. It includes detailed information such as movie titles, directors, release years, countries of origin, and their types (TV Show or Movie).",
+	      key_technologies: "Front-End: Vaadin\nBack-End: Spring Boot Application\nDatabase: SQLite\nDeployment Hosting: Render\nVersion Control: Git",
+	      link_to_github: "https://github.com/tazeenida/Food-Management-System/tree/main/FoodManagementSystem",
+	      app_url: null,
+	    },
   ];
 
   return (
