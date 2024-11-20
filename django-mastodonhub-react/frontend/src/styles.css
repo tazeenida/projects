@@ -1,0 +1,734 @@
+body {
+  background-color: black;
+  font-family: Arial, sans-serif;
+  color: white;
+  margin: 0;
+}
+
+.mastodon-label,
+.main-nav ul,
+.main-nav .login-signup {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(207, 185, 145);
+  height: 70px;
+  padding: 0 10px;
+}
+.main-nav ul {
+  background-color: rgb(207, 185, 145);
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 60px;
+}
+.main-nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+.main-nav ul li a {
+  color: black;
+  text-decoration: none;
+}
+
+.clear-event {
+  background-color: rgb(207, 185, 145);
+  color: white;
+  border-radius: 3px;
+  padding: 2px 5px;
+  border: none;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.clear-event:hover {
+  background-color: white;
+  color: rgb(207, 185, 145);
+}
+
+.remove-event {
+  background-color: orange;
+  color: white;
+  border-radius: 2px;
+  padding: 1px 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.remove-event:hover {
+  background-color: darkorange;
+}
+
+.login-signup {
+  margin-left: auto;
+}
+.login-signup a {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 9px 19px;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+.login-signup a:hover {
+  background-color: black;
+  color: white;
+}
+
+.mastodon-label {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+.footer-container {
+  background-color: rgb(207, 185, 145);
+  color: black;
+  height: 80px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 96.8%;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 20px;
+  overflow: hidden;
+  transition: bottom 0.3s ease; /* Add smooth transition effect */
+}
+
+.left-column {
+  float: left;
+}
+
+.right-column {
+  float: right;
+}
+
+.left-column, .right-column {
+  flex: 1;
+  text-align: left;
+}
+
+footer a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 20px;
+}
+
+.right-column a:hover {
+  color: white;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  width: 950px;
+  display: block; /* Ensures that image is displayed as a block element */
+  margin: 0 auto; /* Centers the image horizontally */
+  border-radius: 5px; /* Adds rounded corners to the image */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+/* Additional CSS for overlaying text on the image */
+#header-image-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.header-image-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border-radius: 10px;
+}
+
+.clubs-container .clubs-container img {
+  max-width: 250px;
+  max-height: 250px;
+}
+
+#clubs h2 {
+  text-align: left; /* Center-align the heading */
+  font-size: 24px; /* Adjust the font size */
+  /*font-weight: bold;*/
+  color: white; /* Text color */
+  margin-bottom: 20px; /* Add some bottom margin for spacing */
+}
+
+/* Additional CSS for styling clubs */
+.clubs-container-dashboard {
+  padding: 10px;
+  background-color: black; /* Light gray background color */
+  border: 6px solid rgb(207, 185, 145); /* Light gray border */
+  border-radius: 5px;
+  margin-top: 40px;
+}
+
+#clubs {
+  margin-bottom: 40px;
+}
+
+.clubs-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.club {
+  width: calc(30.03% - 20px); /* Adjust based on number of clubs per row */
+  /*border: 2px solid #ccc; /* Add border */
+  border-radius: 10px; /* Add border radius */
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth transition on hover */
+  position: relative; /* Position club items relatively */
+  padding: 10px; /* Add padding */
+  box-sizing: border-box; /* Include padding in the width calculation */
+  text-align: center; /* Center-align club content */
+}
+
+.club img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease; /* Add smooth transition on hover */
+}
+
+.club:hover {
+  transform: translateY(-5px); /* Raise the club item slightly on hover */
+  box-shadow: 0 5px 15px rgb(207, 185, 145); /* Add box-shadow effect on hover */
+}
+
+/* Styles for captions */
+figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Add background color to caption for readability */
+  color: white;
+  padding: 10px;
+  margin: 0;
+  margin-top: 10px;
+  opacity: 0; /* Initially hide caption */
+  transition: opacity 0.3s ease; /* Add transition for smooth visibility */
+  border-radius: 6px;
+}
+
+.club:hover {
+  transform: scale(1.1); /* Scale up the club on hover */
+}
+
+/* Show caption on hover */
+.club:hover figcaption {
+  opacity: 1;
+}
+
+/* Additional CSS for styling upcoming events */
+/* Add this to create a border between clubs and events */
+.events-container {
+  display: flex;
+  flex-direction: row; /* Horizontal alignment */
+  justify-content: flex-start; /* Align items from the left */
+  align-items: flex-start; /* Align items at the top */
+  gap: 20px; /* Add some space between events */
+  padding: 20px;
+}
+
+#upcoming-events {
+  margin-top: 40px; /* Add some space above the section */
+  color: white;
+}
+
+.events-wrapper {
+  overflow: auto; /* Ensure the events wrapper can contain floated elements */
+  display: flex; /* Use flexbox for horizontal layout */
+  justify-content: space-between; /* Evenly distribute space between events */
+  flex-wrap: wrap; /* Allow events to wrap to the next row */
+}
+
+.event {
+  width: calc(20% - 20px); /* Adjust based on number of events per row */
+  margin: 10px;
+  border: 2px solid rgb(207, 185, 145); /* Add border */
+  border-radius: 10px; /* Add border radius */
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth transition on hover */
+  position: relative; /* Position event items relatively */
+  padding: 10px; /* Add padding */
+  box-sizing: border-box; /* Include padding in the width calculation */
+  text-align: center; /* Center-align event content */
+  display: inline-block; /* Ensure events are displayed inline */
+  vertical-align: top; /* Align events at the top of the container */
+  cursor: pointer;
+}
+
+.event:hover {
+  transform: scale(1.05); /* Scale up the event on hover */
+}
+
+.event img {
+  width: 100%; /* Ensure images fill the container */
+  height: 150px; /* Set a fixed height for the images */
+  display: block;
+  border-top-left-radius: 10px; /* Rounded corners for the image */
+  border-top-right-radius: 10px;
+  -o-object-fit: cover;
+  object-fit: cover; /* Ensure the image covers the entire container */
+}
+
+.event h3 {
+  margin: 10px 0; /* Add some space around the title */
+  font-size: 14px; /* Increase font size */
+  text-align: left;
+  color: white;
+}
+
+.event h3:hover {
+  transition-duration: 0.3ms ease;
+}
+
+/*login page*/
+#login-main {
+  width: 100%;
+  max-width: 400px; /* Adjust as needed */
+  color: rgb(207, 185, 145);
+  margin-left: 25rem;
+  margin-top: 3.5rem;
+}
+
+#login-page h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#login-form {
+  width: 100%;
+  max-width: 30rem;
+  margin-bottom: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+#login-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+#login-form input[type=email],
+#login-form input[type=password],
+#login-form button[type=submit] { /* Apply styles to buttons */
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: none;
+  background-color: beige;
+}
+
+#login-form button[type=submit] {
+  width: 100%;
+  padding: 0.5rem; /* Adjust padding as needed */
+  background-color: rgb(207, 185, 145);
+  color: black;
+  border: none;
+  width: 420px;
+  cursor: pointer;
+}
+
+#login-page p {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* Styles for signup page */
+#styles_main {
+  width: 100%;
+  max-width: 400px; /* Adjust as needed */
+  color: rgb(207, 185, 145);
+  margin-left: 25rem;
+  margin-top: 3.5rem;
+}
+
+#signup-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+#signup-page h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+#signup-form {
+  width: 100%;
+  max-width: 30rem;
+  margin-bottom: 2rem;
+}
+
+#signup-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+#signup-form input[type=text],
+#signup-form input[type=email],
+#signup-form input[type=password],
+#signup-form button[type=submit] { /* Apply styles to buttons */
+  width: 420px;
+  padding: 0.4rem;
+  margin-bottom: 1rem;
+  border: none;
+  color: black;
+  background-color: rgb(207, 185, 145);
+  cursor: pointer;
+}
+
+.login-link {
+  margin-top: -20px; /* Adjust the value as needed */
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.login-link a {
+  color: rgb(207, 185, 145);
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+.signup-link {
+  margin-top: -20px; /* Adjust the value as needed */
+  font-size: 0.8rem;
+  text-align: center;
+  margin-bottom: 90px;
+}
+
+.signup-link a {
+  color: rgb(207, 185, 145);
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(9, 0, 0, 0.9333333333);
+  border: 1px solid rgba(204, 204, 204, 0);
+  padding: 20px;
+  max-width: 300px;
+  z-index: 9999; /* Ensure pop-up appears above other content */
+}
+
+.popup h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.popup p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.popup img {
+  max-width: 50%;
+}
+
+.event-images img, .club-images {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease;
+  width: 200px; /* Fixed width for consistency */
+  height: 200px; /* Fixed height for consistency */
+  -o-object-fit: cover;
+     object-fit: cover; /* Ensures the image covers the entire area without distortion */
+  border-radius: 10px; /* Matches the border-radius of the container */
+  transition: transform 0.2s;
+}
+
+.filtered-results {
+  padding: 40px;
+  margin: 10px; /* Adds space between the filter bar and the results */
+}
+
+.event-images img:hover, .club-images img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+  opacity: 0.8;
+  box-shadow: 0px 0px 10px rgb(207, 185, 145);
+  border-radius: 20%;
+  margin-bottom: 20px;
+}
+
+.event-title:hover, .club-title:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+  opacity: 0.8;
+}
+
+.event-title, .club-title {
+  text-decoration: none;
+  top: 50%;
+  left: 50%;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  background-color: white(0, 0, 0, 0.5);
+  padding: 10px;
+  margin: 20px;
+}
+
+.event-date, .event-description, .event-time, .event-location {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+
+#categoryFilter {
+  margin: 40px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+#categoryFilter option {
+  padding: 10px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  padding: 20px;
+  border-radius: 4px;
+  margin-left: 400px;
+  position: absolute;
+  top: 60%;
+}
+
+#searchForm {
+  width: 300px;
+}
+
+#categoryInput {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: grey;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type=submit]:hover {
+  background-color: rgb(207, 185, 145);
+}
+
+#Banner img {
+  max-width: 100%;
+  width: 100%;
+  height: 400px;
+}
+
+.Clubs-Banner {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  background-color: white(0, 0, 0, 0.5);
+  padding: 10px;
+}
+
+.Events-Banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  background-color: white(0, 0, 0, 0.5);
+  padding: 10px;
+}
+
+.your-event-link, .featured-event-link, .art-event-link, .featured-club-link {
+  margin-right: 50px;
+}
+
+.ArtEvents, #YourEvents, #SearchResult, #FeaturedEvents, #clubs, #Clubs, #FeaturedClubs, .MusicEvents {
+  background-color: black;
+  padding: 20px;
+  margin: 30px;
+  border-bottom: solid rgb(207, 185, 145) 2px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.YourEvent-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.WorkshopsEvents-item, .Events-item, .events-item {
+  width: calc(30% - 20px); /* Adjust width as needed */
+  margin: 5px;
+  padding: 20px;
+  border: solid rgb(207, 185, 145) 2px;
+  box-sizing: border-box; /* Include padding and border in the width calculation */
+  flex: 1 1 200px; /* Allow items to grow/shrink */
+  text-decoration: none; /* Remove underline */
+  color: #000;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#WorkshopsEvents-container, #Events-container, #Clubs-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+#Events-container img {
+  width: 250px;
+  background-color: black;
+}
+
+.YourEvent-item {
+  width: calc(20% - 20px); /* Adjust width as needed */
+  margin: 10px;
+  padding: 20px;
+  border: solid rgb(207, 185, 145) 2px;
+}
+
+.WorkshopsEvents:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+  opacity: 0.8;
+  border-radius: 20%;
+  margin-bottom: 20px;
+}
+
+#Search {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  height: 40px;
+  position: absolute;
+  top: 70%;
+  left: 40%;
+  align-items: center;
+  overflow: hidden;
+}
+
+.Auth-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.Auth-form {
+  background-color: rgb(207, 185, 145);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+
+.Auth-form-content {
+  margin-bottom: 20px;
+}
+
+.Auth-form-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.btn {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.d-grid.gap-2 {
+  display: grid;
+  gap: 15px;
+}
+
+.mt-3 {
+  margin: 20px;
+}
+
+.profile {
+  text-align: center;
+  margin: 76px;
+}/*# sourceMappingURL=styles.css.map */
