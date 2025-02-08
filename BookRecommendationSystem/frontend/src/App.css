@@ -1,0 +1,92 @@
+h1, h2 {
+  text-align: center;
+  margin: 20px;
+  color: aliceblue;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 900;
+}
+
+body {
+  background-color: white;
+  background-image: url("https://images.ctfassets.net/cnu0m8re1exe/4KwrJVfCGeyOKwm8PS2tjI/30026753d97e3b41a50560063126ded8/shutterstock_135114548.jpg?fm=jpg&fl=progressive&w=660&h=433&fit=fill");
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 900;
+  color: white;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  transition: color 0.3s, background 0.3s;
+  font-weight: bold;
+}
+
+.nav-link.active {
+  color: #fff;
+  background-color: gold;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: gold;
+  background-color: #e9ecef;
+}
+
+.container {
+  margin: 80px;
+}
+
+.form-group {
+  margin-left: 120px;
+  margin-right: 120px;
+}
+
+button {
+  border-radius: 5px;
+}
+
+label {
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 900;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

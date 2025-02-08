@@ -1,0 +1,28 @@
+/* Add your CSS styles here */
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #333;
+}
+
+#book-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.book {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.book h2 {
+    margin-top: 0;
+}
+
+.book p {
+    margin: 5px 0;
+}
